@@ -7,6 +7,8 @@ import { ConnectedRouter } from "connected-react-router";
 import App from "./App";
 import { store, history } from "./redux";
 
+
+
 ReactDOM.render(
   <Provider store={store}>
     <ConnectedRouter history={history}>
@@ -15,6 +17,8 @@ ReactDOM.render(
   </Provider>,
   document.getElementById("root")
 );
+
+
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
