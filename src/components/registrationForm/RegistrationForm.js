@@ -58,7 +58,7 @@ class RegistrationForm extends React.Component {
                             type="text"
                             name="username"
                             onChange={this.handleChange}
-                            placeholder="please enter username..."
+                            placeholder="Please enter username..."
                         />
                     </Form.Group>
 
@@ -71,7 +71,7 @@ class RegistrationForm extends React.Component {
                             minlength={3}
                             maxlength={20}
                             onChange={this.handleChange}
-                            placeholder="please enter password..."
+                            placeholder="Please enter password..."
                         />
                     </Form.Group>
 
