@@ -4,6 +4,7 @@ import { withAsyncAction } from "../../redux/HOCs";
 import "./LoginForm.css";
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import Alert from 'react-bootstrap/Alert';
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -34,6 +35,8 @@ class LoginForm extends React.Component {
                     <Form.Control 
                         autoFocus
                         required
+                        minlength={3}
+                        maxlength={20}
                         type="text"
                         name="username"
                         onChange={this.handleChange}
@@ -45,6 +48,8 @@ class LoginForm extends React.Component {
                     <Form.Label>Password</Form.Label>
                     <Form.Control 
                         required
+                        minlength={3}
+                        maxlength={20}
                         type="password"
                         name="password"
                         onChange={this.handleChange}
@@ -62,7 +67,7 @@ class LoginForm extends React.Component {
                 </Button>
             </Form>
             {loading && <Spinner name="circle" color="blue" />}
-            {error && <p style={{ color: "red" }}>{error.message}</p>}
+            {error && <Alert variant="danger">{error.message}</Alert>}
         </div>
     );
   }

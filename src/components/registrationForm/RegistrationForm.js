@@ -36,10 +36,14 @@ class RegistrationForm extends React.Component {
         this.setState({ [e.target.name]: e.target.value });
     };
 
+    handleDismissError = e => {
+        this.setState({ errMessage: '' })
+    };
+
     render() {
         const errMessage = this.state.errMessage;
         const validated = this.state.validated;
-        const { loading, error } = this.props;
+        const { loading } = this.props;
 
         return (
             <div className="RegistrationForm">
@@ -49,6 +53,8 @@ class RegistrationForm extends React.Component {
                         <Form.Control
                             autoFocus
                             required
+                            minlength={3}
+                            maxlength={20}
                             type="text"
                             name="username"
                             onChange={this.handleChange}
@@ -62,6 +68,8 @@ class RegistrationForm extends React.Component {
                             required
                             type="password"
                             name="password"
+                            minlength={3}
+                            maxlength={20}
                             onChange={this.handleChange}
                             placeholder="please enter password..."
                         />
@@ -73,6 +81,8 @@ class RegistrationForm extends React.Component {
                             required
                             type="text"
                             name="displayName"
+                            minlength={3}
+                            maxlength={20}
                             onChange={this.handleChange}
                             placeholder="Jane/John Doe"
                         />
@@ -88,8 +98,7 @@ class RegistrationForm extends React.Component {
                     </Button>
                 </Form>
                 {loading && <Spinner name="circle" color="blue" />}
-                {error && <p style={{ color: "red" }}>{error.message}</p>}
-                {errMessage && <Alert dismissible variant="danger">{errMessage}</Alert>}
+                {errMessage && <Alert dismissible onClose={this.handleDismissError} variant="danger">{errMessage}</Alert>}
             </div>
         );
     }
