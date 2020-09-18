@@ -20,25 +20,25 @@ class Menu extends React.Component {
     return (
       <div className="Menu">
         <Navbar bg="light" expand="lg">
-        <h1>Kwitter</h1>
-        {this.props.isAuthenticated && (
-          <div id="menu-links">
-             <Nav className="mr-auto">
-      <Nav.Link href="/">Home</Nav.Link>
-      <Nav.Link href="/MessageFeed">Message Feed</Nav.Link>
-            <Nav.Link to="/" onClick={this.handleLogout}>
-              Logout
+          <h1>Kwitter</h1>
+          {this.props.isAuthenticated && (
+            <div id="menu-links">
+              <Nav className="mr-auto">
+                <Nav.Link href="/">Home</Nav.Link>
+                <Nav.Link href="/MessageFeed">Message Feed</Nav.Link>
+                <Nav.Link to="/" onClick={this.handleLogout}>
+                  Logout
             </Nav.Link>
-            </Nav>
-          </div>
-        )}
-   
-      
-  
-    
+              </Nav>
+            </div>
+          )}
 
-</Navbar>
-       
+
+
+
+
+        </Navbar>
+
       </div>
     );
   }
