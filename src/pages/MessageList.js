@@ -1,5 +1,6 @@
 import React from "react"
 import Menu from "../components/menu/Menu"
+
 class MessageList extends React.Component {
     render() {
         return (
@@ -7,7 +8,6 @@ class MessageList extends React.Component {
                 <Menu />
                 <h1>Messages</h1>
                 <ul></ul>
-
             </div>
         )
     }
