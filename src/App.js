@@ -4,6 +4,7 @@ import { Switch, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
+import MisfitzProfile from "./pages/MisfitzProfile"
 
 class App extends React.Component {
   render() {
@@ -17,8 +18,9 @@ class App extends React.Component {
         <Route
           exact
           path="/profile/:username"
-          component={Profile}
+          component={MisfitzProfile}
         />
+        
         <Route
           exact
           path="*"
