@@ -19,6 +19,7 @@ class Menu extends React.Component {
   render() {
     return (
       <div className="Menu">
+
         <Navbar bg="light" expand="lg">
           <h1>Kwitter</h1>
           {this.props.isAuthenticated && (
@@ -38,7 +39,6 @@ class Menu extends React.Component {
 
 
         </Navbar>
-
       </div>
     );
   }
