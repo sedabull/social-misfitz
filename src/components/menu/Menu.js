@@ -32,13 +32,7 @@ class Menu extends React.Component {
               </Nav>
             </div>
           )}
-
-
-
-
-
         </Navbar>
-
       </div>
     );
   }
