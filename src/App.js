@@ -16,6 +16,11 @@ class App extends React.Component {
         />
         <Route
           exact
+          path="/messagefeed"
+          component={MessageList}
+        />
+        <Route
+          exact
           path="/profile/:username"
           component={Profile}
         />
