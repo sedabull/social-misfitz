@@ -7,32 +7,34 @@ import NotFound from "./pages/NotFound";
 import MessageList from "./pages/MessageList";
 
 class App extends React.Component {
-  render() {
-    return (
-      <Switch>
-        <Route
-          exact
-          path="/"
-          component={Home}
-        />
-        <Route
-          exact
-          path="/messagefeed"
-          component={MessageList}
-        />
-        <Route
-          exact
-          path="/profile/:username"
-          component={Profile}
-        />
-        <Route
-          exact
-          path="*"
-          component={NotFound}
-        />
-      </Switch>
-    );
-  }
+    render() {
+        return (
+            <div className="App">
+                <Switch>
+                    <Route
+                        exact
+                        path="/"
+                        component={Home}
+                    />
+                    <Route
+                        exact
+                        path="/messagefeed"
+                        component={MessageList}
+                    />
+                    <Route
+                        exact
+                        path="/profile/:username"
+                        component={Profile}
+                    />
+                    <Route
+                        exact
+                        path="*"
+                        component={NotFound}
+                    />
+                </Switch>
+            </div>
+        );
+    }
 }
 
 export default App;
