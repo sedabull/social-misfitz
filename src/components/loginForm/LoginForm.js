@@ -40,7 +40,7 @@ class LoginForm extends React.Component {
                         type="text"
                         name="username"
                         onChange={this.handleChange}
-                        placeholder="please enter username..."
+                        placeholder="Please enter username..."
                     />
                 </Form.Group>
 
@@ -53,7 +53,7 @@ class LoginForm extends React.Component {
                         type="password"
                         name="password"
                         onChange={this.handleChange}
-                        placeholder="please enter password..."
+                        placeholder="Please enter password..."
                     />
                 </Form.Group>
 
