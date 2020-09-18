@@ -43,11 +43,10 @@ export function getUserPicture(username) {
     return fetch(url + `users/${username}/picture`).then(res => res.json());
 }//end getUserPicture
 
-//TODO: convert image to correct data type
 export function setUserPicture(username, token, image) {
     return fetch(url + `users/${username}/picture`, {
         method: 'PUT',
-        body: String(image),
+        body: image,
         headers: {
             'accept': 'application/json',
             'Content-Type': 'multipart/form-data',
