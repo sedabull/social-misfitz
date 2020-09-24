@@ -41,8 +41,8 @@ class UserUpdater extends React.Component {
 
     componentWillReceiveProps() {
         this.setState((state, props) => ({
-            about: props.about,
-            displayName: props.displayName
+            about: props.user.about,
+            displayName: props.user.displayName
         }));
     }
 
