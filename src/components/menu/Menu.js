@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "./Menu.css";
 import { withAsyncAction } from "../../redux/HOCs";
 import Navbar from "react-bootstrap/Navbar"
@@ -23,7 +22,7 @@ class Menu extends React.Component {
                 <Nav.Link href="/MessageFeed">Message Feed</Nav.Link>
                 <Nav.Link to="/" onClick={this.handleLogout}>
                   Logout
-            </Nav.Link>
+                </Nav.Link>
               </Nav>
             </div>
           )}
