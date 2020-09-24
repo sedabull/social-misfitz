@@ -1,6 +1,7 @@
 import React from "react";
 import Menu from "../components/menu/Menu";
 import { userIsAuthenticated } from "../redux/HOCs";
+import UserProfile from "../components/userProfile/UserProfile";
 
 class Profile extends React.Component {
     constructor(props) {
@@ -17,7 +18,7 @@ class Profile extends React.Component {
         return (
             <div className="Profile">
                 <Menu isAuthenticated={this.props.isAuthenticated} />
-                <h2>Profile</h2>
+                <UserProfile {...this.state} match={this.props.match} />
             </div>
         );
     }
