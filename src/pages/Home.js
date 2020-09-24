@@ -11,7 +11,6 @@ class Home extends React.Component {
         <Menu />
         <h2>Your favorite social hub for misfits.</h2>
         <LoginForm />
-        <RegistrationForm />
       </div>
     );
   }

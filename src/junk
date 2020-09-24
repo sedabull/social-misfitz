@@ -1,0 +1,25 @@
+<Card style={{ width: "18rem" }} style={{ margin: "auto" }}>
+
+<React.Fragment>
+        <StickyHeader />
+        <Container>
+          <Grid.Row />
+          <Grid.Row columns={2} style={{ marginTop: "70px" }}>
+            <Grid.Column floated="left" width={6}>
+              <UserProfile />
+              <Card style={{ margin: "auto", marginTop: "50px" }}>
+                <UpdateProfilePicture />
+                <UpdateProfileForm />
+                <DeleteUser />
+              </Card>
+            </Grid.Column>
+            <Grid.Column floated="right" width={10}>
+              <Segment>
+                <ProfileMessageFeed />
+              </Segment>{" "}
+            </Grid.Column>
+          </Grid.Row>
+        </Container>
+      </React.Fragment>
+
+<Card style={{ width: "60rem", margin: "auto"}}  >
