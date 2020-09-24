@@ -1,4 +1,5 @@
 import React from "react";
+import { store } from '../redux';
 import Menu from "../components/menu/Menu";
 import { getUser } from '../services/dataService';
 import { userIsAuthenticated } from "../redux/HOCs";
@@ -7,11 +8,10 @@ import UserProfile from "../components/userProfile/UserProfile";
 class Profile extends React.Component {
     constructor(props) {
         super(props);
-        let loginResult = JSON.parse(localStorage.getItem('login')).result;
 
         this.state = {
-            token: loginResult.token,
-            username: loginResult.username,
+            token: store.getState().auth.login.result.token,
+            username: store.getState().auth.login.result.username,
             user: {
                 pictureLocation: '',
                 username: '',
