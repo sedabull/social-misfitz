@@ -36,7 +36,7 @@ class UserProfile extends React.Component {
         return (
             <div className="UserPicture">
                 <Card style={{ width: '20rem' }}>
-                    <Card.Img variant='top' src={url + this.props.user.pictureLocation || ghostUser} />
+                    <Card.Img variant='top' src={url ? url + this.props.user.pictureLocation : ghostUser} />
                     <Card.Body>
                         <Card.Title>
                             {this.props.user.displayName}
