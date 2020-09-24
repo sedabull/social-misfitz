@@ -1,9 +1,12 @@
+import './Profile.css';
 import React from "react";
 import { store } from '../redux';
 import Menu from "../components/menu/Menu";
-import { getUser } from '../services/dataService';
+import { getUser, getMessages } from '../services/dataService';
 import { userIsAuthenticated } from "../redux/HOCs";
 import UserProfile from "../components/userProfile/UserProfile";
+import MessageList from "../components/messageList/MessageList";
+import MessagePoster from "../components/messagePoster/MessagePoster";
 
 class Profile extends React.Component {
     constructor(props) {
@@ -12,6 +15,7 @@ class Profile extends React.Component {
         this.state = {
             token: store.getState().auth.login.result.token,
             username: store.getState().auth.login.result.username,
+            messages: [],
             user: {
                 pictureLocation: '',
                 username: '',
@@ -29,11 +33,15 @@ class Profile extends React.Component {
     }
 
     updateUser = () => {
-        getUser(this.props.match.params.username).then(data => {
-            if(data.statusCode === 200) {
-                this.setState({ user: data.user });
+        getUser(this.props.match.params.username).then(userData => {
+            if(userData.statusCode === 200) {
+                let username = this.props.match.params.username || '';
+                getMessages(username).then(messagesData => {
+                    this.setState({ user: userData.user, messages: messagesData.messages })
+                })
             } else {
                 this.setState({
+                    messages: [],
                     user: {
                         pictureLocation: '',
                         username: '',
@@ -52,7 +60,13 @@ class Profile extends React.Component {
         return (
             <div className="Profile">
                 <Menu isAuthenticated={this.props.isAuthenticated} />
-                <UserProfile {...this.state} match={this.props.match} update={this.updateUser} />
+                <div className="flex-row">
+                    <div>
+                        <UserProfile {...this.state} match={this.props.match} update={this.updateUser} />
+                        {this.state.username === this.props.match.params.username && <MessagePoster {...this.state} update={this.updateUser} />}
+                    </div>
+                    <MessageList {...this.state} update={this.updateUser} />
+                </div>
             </div>
         );
     }
