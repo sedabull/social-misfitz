@@ -1,8 +1,8 @@
 import React from "react";
 import Menu from "../components/menu/Menu";
+import { getUser } from '../services/dataService';
 import { userIsAuthenticated } from "../redux/HOCs";
 import UserProfile from "../components/userProfile/UserProfile";
-import { getUser } from '../services/dataService';
 
 class Profile extends React.Component {
     constructor(props) {
@@ -30,7 +30,21 @@ class Profile extends React.Component {
 
     updateUser = () => {
         getUser(this.props.match.params.username).then(data => {
-            this.setState({ user: data.user });
+            if(data.statusCode === 200) {
+                this.setState({ user: data.user });
+            } else {
+                this.setState({
+                    user: {
+                        pictureLocation: '',
+                        username: '',
+                        displayName: 'NO SUCH USER!',
+                        about: 'THIS USER DOES NOT EXIST!',
+                        googleId: null,
+                        createdAt: '',
+                        updatedAt: ''
+                    }
+                });
+            }
         });
     }
 
