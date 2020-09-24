@@ -1,6 +1,7 @@
-/* .MessageComponent {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-  
-  } */
+.MessageComponent .badge {
+    float: right;
+}
+
+.MessageComponent .badge:hover {
+    cursor: pointer;
+}

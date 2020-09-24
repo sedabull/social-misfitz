@@ -22,6 +22,7 @@ class MessagePoster extends React.Component {
             if(data.statusCode === 200) {
                 this.setState({ alert: 'Posted Successfully!', message: '' });
                 setTimeout(() => this.setState({ alert: '' }), 2000);
+                this.props.update();
             } else {
                 console.error(data.message);
                 this.setState({ alert: 'Failed to Post!' });
