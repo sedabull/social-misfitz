@@ -23,7 +23,7 @@ class Users extends React.Component {
     fetchBatch(n, arr) {
         getUsers(100, 100 * n).then(data => {
             if(data.statusCode === 200) {
-                arr = [...arr, ...data.users]
+                arr.push(...data.users);
                 if(100 * n < data.count) {
                     this.fetchBatch(n + 1, arr);
                 } else {
