@@ -2,7 +2,7 @@ import React from 'react';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
-import { updateUser } from '../../services/dataService';
+import { updateUser, setUserPicture } from '../../services/dataService';
 
 class UserUpdater extends React.Component {
     constructor(props) {
@@ -12,7 +12,8 @@ class UserUpdater extends React.Component {
             about: '',
             password: '',
             displayName: '',
-            picture: null
+            pictureName: '',
+            pictureBlob: null
         }
     }
 
@@ -20,8 +21,29 @@ class UserUpdater extends React.Component {
         this.setState({ [e.target.id]: e.target.value });
     }
 
+    handleFile = e => {
+        this.setState({
+            pictureName: e.target.value,
+            pictureBlob: e.target.files[0]
+        });
+    }
+
     handleSubmit = e => {
         e.preventDefault();
+
+        if(this.state.pictureBlob) {
+            setUserPicture(
+                this.props.username,
+                this.props.token,
+                this.state.pictureBlob
+            ).then(data => {
+                if(data.statusCode === 200) {
+                    this.props.update();
+                } else {
+                    console.error(data.message);
+                }
+            })
+        }
 
         if(!this.state.password) {
             updateUser(this.props.username, this.props.token, {
@@ -54,6 +76,7 @@ class UserUpdater extends React.Component {
                 </Modal.Header>
                 <Modal.Body>
                     <Form onSubmit={this.handleSubmit}>
+
                         <Form.Group controlId="displayName">
                             <Form.Label>Display Name</Form.Label>
                             <Form.Control 
@@ -64,16 +87,7 @@ class UserUpdater extends React.Component {
                                 value={this.state.displayName}
                             />
                         </Form.Group>
-                        <Form.Group controlId="password">
-                            <Form.Label>Password</Form.Label>
-                            <Form.Control 
-                                type='password'
-                                minLength={3}
-                                maxLength={20}
-                                onChange={this.handleChange}
-                                value={this.state.password}
-                            />
-                        </Form.Group>
+
                         <Form.Group controlId="about">
                             <Form.Label>About Me</Form.Label>
                             <Form.Control
@@ -84,6 +98,28 @@ class UserUpdater extends React.Component {
                                 value={this.state.about}
                             />
                         </Form.Group>
+
+                        <Form.Group controlId="password">
+                            <Form.Label>Password</Form.Label>
+                            <Form.Control 
+                                type='password'
+                                minLength={3}
+                                maxLength={20}
+                                placeholder="optional"
+                                onChange={this.handleChange}
+                                value={this.state.password}
+                            />
+                        </Form.Group>
+
+                        <Form.Group controlId="picture">
+                            <Form.Label>Picture File</Form.Label>
+                            <Form.File
+                                custom
+                                onChange={this.handleFile}
+                                label={this.state.pictureName || "please choose a very small file..."}
+                            />
+                        </Form.Group>
+
                         <Button block type='submit' variant="primary">
                             Submit Changes!
                         </Button>
