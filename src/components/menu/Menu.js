@@ -19,7 +19,7 @@ class Menu extends React.Component {
             <div id="menu-links">
               <Nav className="mr-auto">
                 <Nav.Link href="/">Home</Nav.Link>
-                <Nav.Link href="/MessageFeed">Message Feed</Nav.Link>
+                <Nav.Link href="/messageFeed">Message Feed</Nav.Link>
                 <Nav.Link to="/" onClick={this.handleLogout}>
                   Logout
                 </Nav.Link>
