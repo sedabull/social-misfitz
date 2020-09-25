@@ -1,0 +1,7 @@
+.UserCard {
+    margin-bottom: 20px;
+}
+
+.UserCard a {
+    color: var(--black);
+}
