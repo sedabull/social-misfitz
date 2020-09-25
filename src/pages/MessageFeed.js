@@ -1,6 +1,6 @@
 import React from 'react'
 import Menu from '../components/menu/Menu';
-import MessageComponent from '../components/messageComponent/MessageComponent';
+import './MessageFeed.css' ;
 import MessageList from '../components/messageList/MessageList';
 import {getMessages} from '../services/dataService'
 
@@ -28,7 +28,7 @@ class MessageFeed extends React.Component {
     render() {
         return (
             <div className='MessageFeed'>
-                <Menu/>
+                <Menu className='Menu'/>
                 <MessageList messages={this.state.messages}/>
                 
             
