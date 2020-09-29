@@ -30,18 +30,18 @@ class Profile extends React.Component {
 
     componentDidMount() {
         this.updateUser();
+        this.updateMessages();
     }
 
     updateUser = () => {
-        getUser(this.props.match.params.username).then(userData => {
-            if(userData.statusCode === 200) {
-                let username = this.props.match.params.username || '';
-                getMessages(username).then(messagesData => {
-                    this.setState({ user: userData.user, messages: messagesData.messages })
-                })
+        let username = this.props.match.params.username;
+
+        getUser(username).then(data => {
+            if(data.statusCode === 200) {
+                this.setState({ user: data.user })
             } else {
+                console.error(data.message);
                 this.setState({
-                    messages: [],
                     user: {
                         pictureLocation: '',
                         username: '',
@@ -56,6 +56,18 @@ class Profile extends React.Component {
         });
     }
 
+    updateMessages = () => {
+        let username = this.props.match.params.username;
+        
+        getMessages(username).then(data => {
+            if(data.statusCode === 200) {
+                this.setState({ messages: data.messages })
+            } else {
+                console.error(data.message);
+            }
+        });
+    }
+
     render() {
         return (
             <div className="Profile">
@@ -63,9 +75,10 @@ class Profile extends React.Component {
                 <div className="flex-row">
                     <div>
                         <UserProfile {...this.state} match={this.props.match} update={this.updateUser} />
-                        {this.state.username === this.props.match.params.username && <MessagePoster {...this.state} update={this.updateUser} />}
+                        {this.state.username === this.props.match.params.username && 
+                        <MessagePoster {...this.state} update={this.updateMessages} />}
                     </div>
-                    <MessageList {...this.state} update={this.updateUser} />
+                    <MessageList {...this.state} update={this.updateMessages} />
                 </div>
             </div>
         );
