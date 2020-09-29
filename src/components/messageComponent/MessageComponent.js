@@ -11,6 +11,8 @@ class MessageComponent extends React.Component {
         deleteMessage(this.props.message.id, this.props.token).then(data => {
             if(data.statusCode === 200) {
                 this.props.update();
+            } else {
+                console.error(data.message);
             }
         });
     }
@@ -32,7 +34,7 @@ class MessageComponent extends React.Component {
                             {badge}
                         </Card.Title>
                         <Card.Subtitle>
-                            {this.props.message.username} posted at {createDate}:
+                            @{this.props.message.username} posted on {createDate}:
                         </Card.Subtitle>
                     </Card.Header>
                     <Card.Body>

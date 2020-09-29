@@ -1,55 +1,91 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-import UserUpdater from '../userUpdater/UserUpdater';
 import ghostUser from '../../assets/ghostuser.png';
+import UserUpdater from '../userUpdater/UserUpdater';
+import UserDeleter from '../userDeleter/UserDeleter';
+import MessagePoster from "../messagePoster/MessagePoster";
 
 class UserProfile extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            showModal: false
+            post: false,
+            update: false,
+            delete: false
         };
+
+        this.hidePost = this.hide.bind(this, 'post');
+        this.hideUpdate = this.hide.bind(this, 'update');
+        this.hideDelete = this.hide.bind(this, 'delete');
     }
 
-    showModal = e => {
-        this.setState({ showModal: true });
+    show = e => {
+        this.setState({ [e.target.id]: true })
     }
 
-    hideModal = e => {
-        this.setState({ showModal: false });
+    hide(id) {
+        this.setState({ [id]: false });
     }
 
     render() {
-        let button = null;
+        let isOwnProfile = this.props.username === this.props.match.params.username;
         let url = this.props.user.pictureLocation ? 'https://socialapp-api.herokuapp.com' : '';
 
-        if(this.props.username === this.props.match.params.username) {
-            button = (
-                <Button block variant="primary" onClick={this.showModal}>
-                    Update Profile
-                </Button>
-            );
-        }
-        
         return (
             <div className="UserProfile">
                 <Card style={{ width: '25rem' }}>
                     <Card.Img variant='top' src={url ? url + this.props.user.pictureLocation : ghostUser} />
-                    <Card.Body>
+                    
+                    <Card.Header>
                         <Card.Title>
                             {this.props.user.displayName}
+                        </Card.Title>
+                        <Card.Subtitle>
+                            @{this.props.user.username}
+                        </Card.Subtitle>
+                    </Card.Header>
+                    
+                    <Card.Body>
+                        <Card.Title>
+                            About me:
                         </Card.Title>
                         <Card.Text>
                             {this.props.user.about}
                         </Card.Text>
                     </Card.Body>
-                    {button}
+                    
+                    {isOwnProfile &&
+                        <Card.Footer>
+                            <Button block id="post" variant="primary" onClick={this.show}>
+                                Post A Message
+                            </Button>
+                            <Button block id="update" variant="primary" onClick={this.show}>
+                                Update Profile
+                            </Button>
+                            <Button block id="delete" variant="danger" onClick={this.show}>
+                                Delete Profile
+                            </Button>
+                        </Card.Footer>
+                    }
+
+                    <MessagePoster 
+                        {...this.props}
+                        show={this.state.post}
+                        onClose={this.hidePost}
+                    />
+
                     <UserUpdater
                         {...this.props}
-                        onClose={this.hideModal}
-                        show={this.state.showModal}
+                        show={this.state.update}
+                        onClose={this.hideUpdate}
+                    />
+
+                    <UserDeleter 
+                        {...this.props}
+                        show={this.state.delete}
+                        onClose={this.hideDelete}
                     />
                 </Card>
             </div>

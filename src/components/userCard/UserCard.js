@@ -14,7 +14,7 @@ function UserCard(props) {
                 <Card style={{ width: "10rem" }}>
                     <Card.Img variant='top' src={url ? url + props.user.pictureLocation : ghostUser} />
                     <Card.Header>
-                        <Card.Title>{props.user.username}</Card.Title>
+                        <Card.Title>@{props.user.username}</Card.Title>
                         <Card.Subtitle>Joined: {createDate}</Card.Subtitle>
                     </Card.Header>
                 </Card>

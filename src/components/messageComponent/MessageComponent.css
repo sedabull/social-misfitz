@@ -1,3 +1,11 @@
+.MessageComponent {
+    margin-bottom: 10px;
+}
+
+.MessageComponent .btn {
+    float: right;
+}
+
 .MessageComponent .badge {
     float: right;
 }

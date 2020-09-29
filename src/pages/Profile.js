@@ -6,7 +6,6 @@ import { getUser, getMessages } from '../services/dataService';
 import { userIsAuthenticated } from "../redux/HOCs";
 import UserProfile from "../components/userProfile/UserProfile";
 import MessageList from "../components/messageList/MessageList";
-import MessagePoster from "../components/messagePoster/MessagePoster";
 
 class Profile extends React.Component {
     constructor(props) {
@@ -29,11 +28,10 @@ class Profile extends React.Component {
     }
 
     componentDidMount() {
-        this.updateUser();
-        this.updateMessages();
+        this.update();
     }
 
-    updateUser = () => {
+    update = () => {
         let username = this.props.match.params.username;
 
         getUser(username).then(data => {
@@ -54,11 +52,7 @@ class Profile extends React.Component {
                 });
             }
         });
-    }
 
-    updateMessages = () => {
-        let username = this.props.match.params.username;
-        
         getMessages(username).then(data => {
             if(data.statusCode === 200) {
                 this.setState({ messages: data.messages })
@@ -72,14 +66,10 @@ class Profile extends React.Component {
         return (
             <div className="Profile">
                 <Menu isAuthenticated={this.props.isAuthenticated} />
-                <div className="flex-row">
-                    <div>
-                        <UserProfile {...this.state} match={this.props.match} update={this.updateUser} />
-                        {this.state.username === this.props.match.params.username && 
-                        <MessagePoster {...this.state} update={this.updateMessages} />}
-                    </div>
-                    <MessageList {...this.state} update={this.updateMessages} />
-                </div>
+                <main>
+                    <UserProfile {...this.state} match={this.props.match} update={this.update} />
+                    <MessageList {...this.state} update={this.update} />
+                </main>
             </div>
         );
     }

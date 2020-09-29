@@ -12,7 +12,7 @@ class Users extends React.Component {
 
         this.state = {
             users: [],
-            narrowUsername: ''
+            search: ''
         }
     }
 
@@ -43,19 +43,19 @@ class Users extends React.Component {
         return (
             <div className="Users">
                 <Menu isAuthenticated={this.props.isAuthenticated} />
-                <h2>All your fellow users:</h2>
+                <h2>All {this.state.users.length} of your fellow users:</h2>
                 <Form>
-                    <Form.Group controlId="narrowUsername">
+                    <Form.Group controlId="search">
                         <Form.Control
                             type="text"
                             onChange={this.handleChange}
-                            value={this.state.narrowUsername}
+                            value={this.state.search}
                             placeholder="search by username..."
                         />
                     </Form.Group>
                 </Form>
                 <div className="flexible">
-                    {this.state.users.filter(user => user.username.toLowerCase().includes(this.state.narrowUsername))
+                    {this.state.users.filter(user => user.username.toLowerCase().includes(this.state.search))
                                      .map(user => <UserCard user={user} />)}
                 </div>
             </div>
