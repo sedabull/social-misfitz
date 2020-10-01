@@ -1,14 +1,5 @@
 .MessageFeed {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     background-color: rgb(41, 29, 41);
-}
-
-.Menu {
-    display:flex;
-    flex-direction: row;
-    justify-content: left;
 }
 
 .MessageList {
