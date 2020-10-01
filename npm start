@@ -1,0 +1,659 @@
+[33mcommit b108082e5b8cbced30bc66da8c6b33c7f9f86ccf[m[33m ([m[1;36mHEAD -> [m[1;32mgeorgette[m[33m, [m[1;31morigin/georgette[m[33m)[m
+Merge: d9461f9 3de1939
+Author: Seth David Bullock <sedabull@gmail.com>
+Date:   Thu Sep 24 17:11:45 2020 -0400
+
+    Merge pull request #41 from sedabull/master
+    
+    pulling master
+
+[33mcommit 3de19394b860df8884e1fa0853993beaf6645e67[m[33m ([m[1;31morigin/master[m[33m)[m
+Merge: a2a57e0 e93b21b
+Author: Seth David Bullock <sedabull@gmail.com>
+Date:   Thu Sep 24 17:11:06 2020 -0400
+
+    Merge pull request #40 from sedabull/review/QA
+    
+    update from work done on 9/24
+
+[33mcommit e93b21bfeeb016d2b8ea8d3c792dd5edb8e1f381[m[33m ([m[1;31morigin/review/QA[m[33m)[m
+Merge: cb63c37 03bf6cd
+Author: Seth David Bullock <sedabull@gmail.com>
+Date:   Thu Sep 24 17:07:52 2020 -0400
+
+    Merge pull request #39 from sedabull/seth
+    
+    lots and lots of changes, mostly making things stateless
+
+[33mcommit 03bf6cd3a0d6640552f411e5f4f338c1d7453fb7[m[33m ([m[1;31morigin/seth[m[33m)[m
+Author: sedabull <sedabull@gmail.com>
+Date:   Thu Sep 24 17:07:01 2020 -0400
+
+    lots and lots of changes, mostly making things stateless
+
+[33mcommit cb63c37b59d0015155942a938f4649102e3d131d[m
+Merge: a4e58de 9753475
+Author: Seth David Bullock <sedabull@gmail.com>
+Date:   Thu Sep 24 14:18:34 2020 -0400
+
+    Merge pull request #38 from sedabull/seth
+    
+    user updater functionality
+
+[33mcommit 97534755ea836acb87f80154eb27a7b29666fbd9[m
+Author: sedabull <sedabull@gmail.com>
+Date:   Thu Sep 24 12:32:19 2020 -0400
+
+    fix ghost user placeholder image bug
+
+[33mcommit 66dfb66ae48040a8b76ab487ec285d53be5d6cb3[m
+Author: sedabull <sedabull@gmail.com>
+Date:   Thu Sep 24 12:25:40 2020 -0400
+
+    use redux store to get token and username
+
+[33mcommit 0403e209dec4263c07167f68e1bf888aa1b4c979[m
+Author: sedabull <sedabull@gmail.com>
+Date:   Thu Sep 24 12:19:35 2020 -0400
+
+    add safeguard for non-existant users
+
+[33mcommit 0f457d6810c1a5f3c6318fa3c95ab5bf8c2d8cbe[m
+Author: sedabull <sedabull@gmail.com>
+Date:   Thu Sep 24 12:05:23 2020 -0400
+
+    lift user state up to profile page
+
+[33mcommit 112226b7375bf2b6131b66060029a2961417a54c[m
+Author: sedabull <sedabull@gmail.com>
+Date:   Thu Sep 24 00:59:40 2020 -0400
+
+    get update user functionality working
+
+[33mcommit 1c3c0de046faeb4e9df25a1c7ce540e4c64eab03[m
+Merge: febdc72 a2a57e0
+Author: Seth David Bullock <sedabull@gmail.com>
+Date:   Fri Sep 18 16:12:30 2020 -0400
+
+    Merge pull request #36 from sedabull/master
+    
+    pulling master
+
+[33mcommit a2a57e08faf61062a421954b8ab1e4248930c342[m
+Merge: 598b66c f66d74a
+Author: Seth David Bullock <sedabull@gmail.com>
+Date:   Fri Sep 18 16:11:46 2020 -0400
+
+    Merge branch 'lorne' into master
+
+[33mcommit 598b66c63e4bdfbeee5d7e0b33336db009d2026c[m
+Merge: 0132fbb b497010
+Author: Seth David Bullock <sedabull@gmail.com>
+Date:   Fri Sep 18 16:08:55 2020 -0400
+
+    Merge branch 'kahlil' into master
+
+[33mcommit d9461f939ec0c359a84d2afbfab0bf1ddb936818[m
+Merge: 0ff0ac9 0132fbb
+Author: Seth David Bullock <sedabull@gmail.com>
+Date:   Fri Sep 18 16:07:55 2020 -0400
+
+    Merge pull request #33 from sedabull/master
+    
+    pulling master
+
+[33mcommit 0132fbb5d2c1706fed7b24d7165d96ede60e48cc[m
+Merge: 9462b26 a4e58de
+Author: Seth David Bullock <sedabull@gmail.com>
+Date:   Fri Sep 18 16:07:14 2020 -0400
+
+    Merge pull request #32 from sedabull/review/QA
+    
+    Review/qa
+
+[33mcommit a4e58de8064783585f375dc8ba22535ded5498e6[m
+Merge: 0d81637 febdc72
+Author: Seth David Bullock <sedabull@gmail.com>
+Date:   Fri Sep 18 16:06:00 2020 -0400
+
+    Merge pull request #31 from sedabull/seth
+    
+    standardize nav bar
+
+[33mcommit b4970101420a3f37b98a2d220609c676c67e4c9f[m
+Author: Kahlil Enmond <slope22@hotmail.com>
+Date:   Fri Sep 18 15:47:52 2020 -0400
+
+    message list
+
+[33mcommit febdc72b6833cb7bcb6a0e6c790f1af6a30ae2c0[m
+Author: sedabull <sedabull@gmail.com>
+Date:   Fri Sep 18 15:45:01 2020 -0400
+
+    standardize nav bar
+
+[33mcommit 0d816374e2bb864f858743c1b09641b4d8c5e900[m
+Merge: 168f650 31e7f04
+Author: Seth David Bullock <sedabull@gmail.com>
+Date:   Fri Sep 18 15:16:08 2020 -0400
+
+    Merge pull request #30 from sedabull/seth
+    
+    MessageComponent
+
+[33mcommit 31e7f042aaf2e051ba335dfb626ae7c71a9013c7[m
+Author: sedabull <sedabull@gmail.com>
+Date:   Fri Sep 18 15:13:48 2020 -0400
+
+    add MessageComponent
+
+[33mcommit d85c1b1a7e3747d5584a9c5e6b64c99daac669a1[m
+Merge: 95e4933 9462b26
+Author: Seth David Bullock <sedabull@gmail.com>
+Date:   Fri Sep 18 14:36:16 2020 -0400
+
+    Merge pull request #29 from sedabull/master
+    
+    pulling master
+
+[33mcommit f66d74a68999b61ead6197c2c71588d1a63254c4[m
+Merge: 0804b8b 8ed5862
+Author: Lorne J <biglornej@gmail.com>
+Date:   Fri Sep 18 10:51:16 2020 -0600
+
+    added profile page
+
+[33mcommit 0804b8bc63117bab820649b318e6c0008a5e47b3[m
+Author: Lorne J <biglornej@gmail.com>
+Date:   Fri Sep 18 10:47:02 2020 -0600
+
+    addded profile page
+
+[33mcommit 9462b2641af0f24e628f5780bedac8d93c04e747[m
+Merge: 43c99b4 ddd527f
+Author: Seth David Bullock <sedabull@gmail.com>
+Date:   Fri Sep 18 12:32:01 2020 -0400
+
+    Merge branch 'tera' into master
+
+[33mcommit 8ed5862b597854ca35a86383c8e667676f249ac3[m
+Merge: bfc0dd4 43c99b4
+Author: Seth David Bullock <sedabull@gmail.com>
+Date:   Fri Sep 18 12:29:24 2020 -0400
+
+    Merge pull request #27 from sedabull/master
+    
+    pulling master
+
+[33mcommit d735d0e2ec76eab142021cefb4d592ddc2233544[m
+Merge: 47d1ceb 43c99b4
+Author: Seth David Bullock <sedabull@gmail.com>
+Date:   Fri Sep 18 12:28:43 2020 -0400
+
+    Merge pull request #26 from sedabull/master
+    
+    pulling master
+
+[33mcommit 43c99b4b11d5fc3cf064e731c9d33827be64857f[m
+Merge: 16aa3e3 47d1ceb
+Author: Seth David Bullock <sedabull@gmail.com>
+Date:   Fri Sep 18 12:28:34 2020 -0400
+
+    Merge branch 'kahlil' into master
+
+[33mcommit 0ff0ac9e918aa4479dbca42778396514ba579888[m
+Merge: efce611 16aa3e3
+Author: Seth David Bullock <sedabull@gmail.com>
+Date:   Fri Sep 18 12:26:38 2020 -0400
+
+    Merge pull request #25 from sedabull/master
+    
+    pulling master
+
+[33mcommit 16aa3e3414b0680dbe8b824fa8e86e287971e8ff[m
+Merge: 6fca54a efce611
+Author: Seth David Bullock <sedabull@gmail.com>
+Date:   Fri Sep 18 12:26:29 2020 -0400
+
+    Merge branch 'georgette' into master
+
+[33mcommit 6fca54a80d69c2408c23f0b6c021f8cf2d98c1f5[m
+Merge: 2f3a149 168f650
+Author: Seth David Bullock <sedabull@gmail.com>
+Date:   Fri Sep 18 12:25:01 2020 -0400
+
+    Merge pull request #24 from sedabull/review/QA
+    
+    Review/qa
+
+[33mcommit 95e49330d4520cdceb9b6fcedffc49934aaf41a9[m
+Author: sedabull <sedabull@gmail.com>
+Date:   Fri Sep 18 11:44:44 2020 -0400
+
+    fix setUserPicture service
+
+[33mcommit 168f650a2404d2b89391e5e67b62a51c2989b33c[m
+Merge: 9da18d9 7068ee7
+Author: Seth David Bullock <sedabull@gmail.com>
+Date:   Thu Sep 17 23:21:23 2020 -0400
+
+    Merge pull request #23 from sedabull/seth
+    
+    add a MessagePoster component
+
+[33mcommit 7068ee71745838af808567a8ca4f001169d5d9f2[m
+Author: sedabull <sedabull@gmail.com>
+Date:   Thu Sep 17 23:18:46 2020 -0400
+
+    add a MessagePoster component
+
+[33mcommit 9da18d9cd7c3bddee728222df380f93c319776d7[m
+Author: Kahlil Enmond <slope22@hotmail.com>
+Date:   Thu Sep 17 18:24:15 2020 -0400
+
+    updated punctuation
+
+[33mcommit 47d1cebc42da296ab72958fc4b82533def4b5380[m
+Merge: 15b6d48 749f39a
+Author: Kahlil Enmond <slope22@hotmail.com>
+Date:   Thu Sep 17 17:35:32 2020 -0400
+
+    Merge branch 'kahlil' of https://github.com/sedabull/social-misfitz into kahlil
+
+[33mcommit 15b6d489a8309d90f60ee974140d793712f9dc98[m
+Author: Kahlil Enmond <slope22@hotmail.com>
+Date:   Thu Sep 17 17:35:11 2020 -0400
+
+    added Message Feed landing page outline
+
+[33mcommit d4ae7096a26885560c0d58e72e2474b9e479c8eb[m
+Merge: f30c74e 92b9724
+Author: Seth David Bullock <sedabull@gmail.com>
+Date:   Thu Sep 17 17:34:07 2020 -0400
+
+    Merge pull request #22 from sedabull/seth
+    
+    LikesComponent addition
+
+[33mcommit 92b97249f87c086ed7f985a14d6768945f751827[m
+Author: sedabull <sedabull@gmail.com>
+Date:   Thu Sep 17 17:28:30 2020 -0400
+
+    add LikesComponent to be added to the bottom of a message card
+
+[33mcommit 390770b0eaa578af5bd92e707decc37a27b5768f[m
+Author: sedabull <sedabull@gmail.com>
+Date:   Thu Sep 17 17:27:49 2020 -0400
+
+    add useful state to the profile page
+
+[33mcommit f30c74ea5d3f5be55bda6dc7b8c719c69ec459c8[m
+Author: Kahlil Enmond <slope22@hotmail.com>
+Date:   Thu Sep 17 16:23:38 2020 -0400
+
+    editted white space
+
+[33mcommit ddd527f90dd28cd5ba5d09a231a0f229590bbd64[m
+Merge: 3c8f153 efce611
+Author: Seth David Bullock <sedabull@gmail.com>
+Date:   Thu Sep 17 16:03:21 2020 -0400
+
+    Merge pull request #21 from sedabull/georgette
+    
+    merge Georgette into Tera
+
+[33mcommit efce611c47da0f7fc469d8bab61ea36f4a63c629[m
+Author: Georgette-Turner <63122409+Georgette-Turner@users.noreply.github.com>
+Date:   Thu Sep 17 15:58:27 2020 -0400
+
+    Initial Message Component
+
+[33mcommit 63944591d60ad6699cb7d931283dff29135856fd[m
+Merge: 3a3bcc9 856bd42
+Author: Seth David Bullock <sedabull@gmail.com>
+Date:   Thu Sep 17 14:44:24 2020 -0400
+
+    Merge pull request #20 from sedabull/seth
+    
+    add registration form and slightly adjust login form
+
+[33mcommit 856bd4202b2ec81410801ef35bb3641b5a26e5ee[m
+Author: sedabull <sedabull@gmail.com>
+Date:   Thu Sep 17 14:42:21 2020 -0400
+
+    complete registration form and add character limits to both forms
+
+[33mcommit 8c5807e73153db4c237882b81faefde1e22c346d[m
+Merge: a48f575 2f3a149
+Author: Seth David Bullock <sedabull@gmail.com>
+Date:   Thu Sep 17 12:39:42 2020 -0400
+
+    Merge pull request #19 from sedabull/master
+    
+    pulling master into seth branch
+
+[33mcommit 2f3a149df87c29bdb5fcd697a1e0c9a68d63f996[m
+Merge: c8edc48 3a3bcc9
+Author: Seth David Bullock <sedabull@gmail.com>
+Date:   Thu Sep 17 12:33:06 2020 -0400
+
+    Merge pull request #18 from sedabull/review/QA
+    
+    Review/qa
+
+[33mcommit 3a3bcc9678862e987dcc77cbab2790cafdc3256d[m
+Merge: 2011249 3c8f153
+Author: Seth David Bullock <sedabull@gmail.com>
+Date:   Thu Sep 17 11:46:41 2020 -0400
+
+    Merge pull request #17 from sedabull/tera
+    
+    Nav bar
+
+[33mcommit 3c8f15310765040fbe4a89fb81af8663e49247ef[m
+Merge: f74164c 2011249
+Author: Seth David Bullock <sedabull@gmail.com>
+Date:   Thu Sep 17 11:46:18 2020 -0400
+
+    Merge branch 'review/QA' into tera
+
+[33mcommit f74164c3d8bc567ceecfbaa5439a2c1968c131a7[m
+Merge: ff8c157 79c0e3d
+Author: tera stanton <terabeth@me.com>
+Date:   Thu Sep 17 10:43:14 2020 -0500
+
+    Merge branch 'tera' of https://github.com/sedabull/social-misfitz into tera
+
+[33mcommit ff8c15777f7b072cd153ee7ab56df5a712f3f0c4[m
+Author: tera stanton <terabeth@me.com>
+Date:   Thu Sep 17 10:42:47 2020 -0500
+
+    nav bar
+
+[33mcommit a48f57565e66a15170d39a6331bfed2a54c41917[m
+Author: sedabull <sedabull@gmail.com>
+Date:   Thu Sep 17 11:27:58 2020 -0400
+
+    initial commit of registration form
+
+[33mcommit c8edc48ff61a748e4c2cc3080d96f48a666efc3c[m
+Merge: e6c4a86 2011249
+Author: Seth David Bullock <sedabull@gmail.com>
+Date:   Fri Sep 11 17:33:39 2020 -0400
+
+    Merge pull request #16 from sedabull/review/QA
+    
+    Review/qa
+
+[33mcommit 2011249c78dd0d998c4a482b3126b22494ac7326[m
+Merge: afece5a e2579eb
+Author: Kahlil Enmond <slope22@hotmail.com>
+Date:   Fri Sep 11 17:29:50 2020 -0400
+
+    Merge branch 'review/QA' of https://github.com/sedabull/social-misfitz into review/QA
+
+[33mcommit afece5a734d23592316d49767ec0f1f5a94bdcde[m
+Author: Kahlil Enmond <slope22@hotmail.com>
+Date:   Fri Sep 11 17:27:24 2020 -0400
+
+    cheked out LoginForm for errors. Removed text from body of HTML file (>)
+    git push
+
+[33mcommit e2579eb535fef70f9795e28e8e71e334bf10b852[m
+Merge: 6258b91 996cdc8
+Author: Seth David Bullock <sedabull@gmail.com>
+Date:   Fri Sep 11 16:56:17 2020 -0400
+
+    Merge pull request #15 from sedabull/seth
+    
+    adjust LoginForm component to use bootstrap library
+
+[33mcommit 996cdc84a17daa56167b0df4cf0d435e9936637f[m
+Author: sedabull <sedabull@gmail.com>
+Date:   Fri Sep 11 16:54:19 2020 -0400
+
+    adjust LoginForm component to use bootstrap library
+
+[33mcommit 6258b9131a66e2b3a35e19c81193b1d4362e1a75[m
+Merge: ce948e4 e6c4a86
+Author: Seth David Bullock <sedabull@gmail.com>
+Date:   Fri Sep 11 15:54:41 2020 -0400
+
+    Merge pull request #14 from sedabull/master
+    
+    add bootstrap dependancies
+
+[33mcommit 79c0e3d9496e1013a1a96c2022486a2f5e4757d6[m
+Merge: a874bb0 e6c4a86
+Author: Seth David Bullock <sedabull@gmail.com>
+Date:   Fri Sep 11 15:53:49 2020 -0400
+
+    Merge pull request #13 from sedabull/master
+    
+    add bootstrap css
+
+[33mcommit bfc0dd4544a0918229ca43b38bd276c5927d3a95[m
+Merge: 45609db e6c4a86
+Author: Seth David Bullock <sedabull@gmail.com>
+Date:   Fri Sep 11 15:53:10 2020 -0400
+
+    Merge pull request #12 from sedabull/master
+    
+    add bootstrap css
+
+[33mcommit 749f39aaacaabecdaee968f6fb0d2c70d43ffbc4[m
+Merge: d7a0682 e6c4a86
+Author: Seth David Bullock <sedabull@gmail.com>
+Date:   Fri Sep 11 15:52:16 2020 -0400
+
+    Merge pull request #11 from sedabull/master
+    
+    add bootstrap dependancies
+
+[33mcommit bf32c57c6b0fb81180e72a83ec82d7960f5f2e99[m
+Merge: 2a87d62 e6c4a86
+Author: Seth David Bullock <sedabull@gmail.com>
+Date:   Fri Sep 11 15:51:01 2020 -0400
+
+    Merge pull request #10 from sedabull/master
+    
+    add bootstrap css
+
+[33mcommit e6c4a86f4fe6d0b6bfc3257511c47941457120c8[m
+Merge: a1cef97 f56168d
+Author: Seth David Bullock <sedabull@gmail.com>
+Date:   Fri Sep 11 15:50:19 2020 -0400
+
+    Merge pull request #9 from sedabull/seth
+    
+    add css import for bootstrap
+
+[33mcommit f56168d12905bef1d53b2a02fc54510c960596cc[m
+Author: sedabull <sedabull@gmail.com>
+Date:   Fri Sep 11 15:49:15 2020 -0400
+
+    add css import for bootstrap
+
+[33mcommit 45609db84bed82acd6ec53ed11ec64cfbfdf65a8[m
+Merge: 5335e8d 7ed1177
+Author: Lorne J <biglornej@gmail.com>
+Date:   Fri Sep 11 13:14:09 2020 -0600
+
+    Merge branch 'lorne' of https://github.com/sedabull/social-misfitz into lorne
+
+[33mcommit 5335e8d157768f1c63acb38eec97f17f99f280d5[m
+Author: Lorne J <biglornej@gmail.com>
+Date:   Fri Sep 11 13:06:33 2020 -0600
+
+    what the
+
+[33mcommit a874bb0ee9e69557c6ad9b9e00aaa26ff5b2a0f7[m
+Merge: e432122 a1cef97
+Author: Seth David Bullock <sedabull@gmail.com>
+Date:   Fri Sep 11 15:02:25 2020 -0400
+
+    Merge pull request #8 from sedabull/master
+    
+    add bootstrap script
+
+[33mcommit 7ed117797cd7bda17f177d6631e4164d89ee3641[m
+Merge: e432122 a1cef97
+Author: Seth David Bullock <sedabull@gmail.com>
+Date:   Fri Sep 11 15:01:48 2020 -0400
+
+    Merge pull request #7 from sedabull/master
+    
+    add bootstrap scipt
+
+[33mcommit 2a87d62c38b7afacc01ca48c23a1a0d774008edd[m
+Merge: d7a0682 a1cef97
+Author: Seth David Bullock <sedabull@gmail.com>
+Date:   Fri Sep 11 15:00:24 2020 -0400
+
+    Merge pull request #5 from sedabull/master
+    
+    add bootstrap script
+
+[33mcommit a1cef97fb212710df0dac5388afbc8f426fce561[m
+Merge: d7a0682 cf7914e
+Author: Seth David Bullock <sedabull@gmail.com>
+Date:   Fri Sep 11 14:59:35 2020 -0400
+
+    Merge pull request #4 from sedabull/seth
+    
+    add bootstrap link to index.html
+
+[33mcommit cf7914e85c8e0b5ad3f02966adabd36a6fe2994c[m
+Author: sedabull <sedabull@gmail.com>
+Date:   Fri Sep 11 14:58:18 2020 -0400
+
+    add bootstrap link to index.html
+
+[33mcommit d7a06825a1a45c42bf76e9447b827c3d4410c57e[m[33m ([m[1;32mmaster[m[33m)[m
+Merge: 69dff56 8078c32
+Author: Seth David Bullock <sedabull@gmail.com>
+Date:   Fri Sep 11 14:31:10 2020 -0400
+
+    Merge pull request #2 from sedabull/seth
+    
+    Seth
+
+[33mcommit 69dff567fe20c9dea752c6c60c5da264fc71b898[m
+Merge: e432122 ce948e4
+Author: Seth David Bullock <sedabull@gmail.com>
+Date:   Fri Sep 11 14:30:27 2020 -0400
+
+    Merge pull request #3 from sedabull/review/QA
+    
+    Review/qa
+
+[33mcommit 8078c329a74b2a58cdbe46ffc45ffa482e6028a9[m
+Author: sedabull <sedabull@gmail.com>
+Date:   Fri Sep 11 14:24:30 2020 -0400
+
+    add bootstrap dependancy
+
+[33mcommit ce948e4a6d0ea23d4606ec76cd79c1ab2d689774[m
+Merge: e432122 3974e05
+Author: Seth David Bullock <sedabull@gmail.com>
+Date:   Thu Sep 10 17:31:00 2020 -0400
+
+    Merge pull request #1 from sedabull/seth
+    
+    add api endpoint methods for testing
+
+[33mcommit 3974e054a8c12eba65a29b3a7fb3f84f69da3435[m
+Author: sedabull <sedabull@gmail.com>
+Date:   Thu Sep 10 17:28:01 2020 -0400
+
+    add api endpoint methods for testing
+
+[33mcommit e43212210e8a8df207dedff710a3e63efe56ac30[m
+Author: tamburkey <petem14@gmail.com>
+Date:   Sat Aug 29 00:05:46 2020 -0400
+
+    move HOCS into redux dir
+
+[33mcommit 0bd59833de304f3a229f3646e1848ce3015dd725[m
+Author: tamburkey <petem14@gmail.com>
+Date:   Fri Aug 28 23:54:17 2020 -0400
+
+    update name / add constructor
+
+[33mcommit ccc0e02a6cb9d224d73de72d1dea835175f17dba[m
+Author: tamburkey <petem14@gmail.com>
+Date:   Thu Aug 27 00:51:20 2020 -0400
+
+    replace fragment with div
+
+[33mcommit 56f8f929db58028bd2953264ab012ebfeb273f5f[m
+Author: tamburkey <petem14@gmail.com>
+Date:   Wed Aug 26 21:42:09 2020 -0400
+
+    remove unused files
+
+[33mcommit 596f794d30802bb51a164fa8aecabe83df6245bb[m
+Author: tamburkey <petem14@gmail.com>
+Date:   Wed Aug 26 21:38:58 2020 -0400
+
+    add .vscode
+
+[33mcommit 028972a01468d97097239363c99f73b888ab50a1[m
+Author: tamburkey <petem14@gmail.com>
+Date:   Wed Aug 26 21:38:28 2020 -0400
+
+    remove .vscode
+
+[33mcommit 98edc783a69655d8cfbc09cc9d7ab74706fca1d2[m
+Author: tamburkey <petem14@gmail.com>
+Date:   Wed Aug 26 21:35:40 2020 -0400
+
+    remove unused logo
+
+[33mcommit 6b619af599e5cd1dc33167b788d389b6dcaee25a[m
+Author: tamburkey <petem14@gmail.com>
+Date:   Wed Aug 26 21:32:46 2020 -0400
+
+    Revert "t "npm udpate/refactor component dir/format""
+    
+    This reverts commit be1237eecadd693f0b7e26dfcbdf2828862763e6.
+
+[33mcommit be1237eecadd693f0b7e26dfcbdf2828862763e6[m
+Author: tamburkey <petem14@gmail.com>
+Date:   Wed Aug 26 21:29:12 2020 -0400
+
+    t "npm udpate/refactor component dir/format"
+    
+    This reverts commit 49a5a9018ba4ccae5f7a70a26fe664532d7d5052.
+
+[33mcommit 49a5a9018ba4ccae5f7a70a26fe664532d7d5052[m
+Author: tamburkey <petem14@gmail.com>
+Date:   Wed Aug 26 21:10:00 2020 -0400
+
+    npm udpate/refactor component dir/format
+
+[33mcommit 1d81a0ff214a5821b763ec211a1805576d3887b8[m
+Author: Jon Taylor <61242275+JonTaylorKA@users.noreply.github.com>
+Date:   Wed Mar 4 16:54:40 2020 -0600
+
+    Update README.md
+    
+    Change starter code link from Eric's github to KenzieAcademy github
+
+[33mcommit 2a626b46ac2c75fa12f112c0f123aa703e23c3ce[m
+Author: Eric Schwartz <eric@kenzie.academy>
+Date:   Mon Jan 13 19:47:48 2020 -0500
+
+    update Readme with API links
+
+[33mcommit 3d484d4f76a51fe94a2fed8567c449c77bc56ecd[m
+Author: Eric Schwartz <eric@kenzie.academy>
+Date:   Mon Jan 13 19:40:26 2020 -0500
+
+    update app name to SocialApp
+
+[33mcommit 9b32f42504696a142badad708514777c80c7951b[m
+Author: Eric Schwartz <eric@kenzie.academy>
+Date:   Thu Jan 9 21:27:47 2020 -0500
+
+    initial commit

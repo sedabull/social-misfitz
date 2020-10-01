@@ -1,0 +1,23 @@
+.flex-row {
+    
+    display: flex;
+    margin-top: 200px;
+    justify-content: space-evenly;
+    /* background-image: no-repeat; */
+}
+
+.NotFound {
+    /* background-image: no-repeat;
+    background-size: cover;
+    background-size: auto 400%;
+    background-size: height 400%; */
+     background-repeat: no-repeat;
+     background-position: center;
+     width: 1500px;
+     height: 1000px;
+     border: none;
+
+
+    
+    background-image:url("../images/Squirrel-404.jpg");
+}
