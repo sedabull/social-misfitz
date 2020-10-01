@@ -1,7 +1,8 @@
-import "./UserCard.css";
 import React from "react";
 import { Link } from "react-router-dom";
 import Card from "react-bootstrap/Card";
+
+import "./UserCard.css";
 import ghostUser from '../../assets/ghostuser.png';
 
 function UserCard(props) {

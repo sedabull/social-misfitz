@@ -1,9 +1,10 @@
-import './Profile.css';
 import React from "react";
+
+import './Profile.css';
 import { store } from '../redux';
 import Menu from "../components/menu/Menu";
-import { getUser, getMessages } from '../services/dataService';
 import { userIsAuthenticated } from "../redux/HOCs";
+import { getUser, getMessages } from '../services/dataService';
 import UserProfile from "../components/userProfile/UserProfile";
 import MessageList from "../components/messageList/MessageList";
 

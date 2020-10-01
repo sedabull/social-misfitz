@@ -1,8 +1,9 @@
 import React from 'react';
-import './MessagePoster.css';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
+
+import './MessagePoster.css';
 import { createMessage } from '../../services/dataService';
 
 class MessagePoster extends React.Component {

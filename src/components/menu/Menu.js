@@ -1,12 +1,14 @@
 import React from "react";
+import Nav from "react-bootstrap/Nav";
+import { Link } from "react-router-dom";
+import Navbar from "react-bootstrap/Navbar";
+
 import "./Menu.css";
 import { withAsyncAction } from "../../redux/HOCs";
-import Navbar from "react-bootstrap/Navbar"
-import Nav from "react-bootstrap/Nav"
 
 class Menu extends React.Component {
-  handleLogout = event => {
-    event.preventDefault();
+  handleLogout = e => {
+    e.preventDefault();
     this.props.logout();
   };
 
@@ -18,12 +20,10 @@ class Menu extends React.Component {
           {this.props.isAuthenticated && (
             <div id="menu-links">
               <Nav className="mr-auto">
-                <Nav.Link href="/">Home</Nav.Link>
-                <Nav.Link href="/messageFeed">Message Feed</Nav.Link>
-                <Nav.Link href="/users">Users</Nav.Link>
-                <Nav.Link to="/" onClick={this.handleLogout}>
-                  Logout
-                </Nav.Link>
+                <Link to="/">Home</Link>
+                <Link to="/messageFeed">Message Feed</Link>
+                <Link to="/users">Users</Link>
+                <Link to="/" onClick={this.handleLogout}>Logout</Link>
               </Nav>
             </div>
           )}

@@ -1,8 +1,9 @@
 import React from 'react'
-import Menu from '../components/menu/Menu';
+
 import './MessageFeed.css' ;
-import MessageList from '../components/messageList/MessageList';
+import Menu from '../components/menu/Menu';
 import {getMessages} from '../services/dataService'
+import MessageList from '../components/messageList/MessageList';
 
 class MessageFeed extends React.Component {
     constructor(props){
