@@ -1,10 +1,9 @@
 import React from "react";
-import Spinner from "react-spinkit";
-import { withAsyncAction } from "../../redux/HOCs";
-import "./RegistrationForm.css";
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import Alert from 'react-bootstrap/Alert';
+
+import "./RegistrationForm.css";
+import { withAsyncAction } from "../../redux/HOCs";
 import { createUser } from '../../services/dataService';
 
 class RegistrationForm extends React.Component {
@@ -13,41 +12,33 @@ class RegistrationForm extends React.Component {
         this.state = {
             username: "",
             password: "",
-            displayName: "",
-            validated: false,
-            errMessage: ""
+            displayName: ""
         };
     }
 
     handleRegistration = e => {
         e.preventDefault();
-        let {username, password, displayName} = this.state;
-        createUser({username, password, displayName}).then(res => {
-            console.log(res);
-            if(res.statusCode === 200) {
-                this.setState({ validated: true, errMessage: "" })
+        let { username, password } = this.state;
+        
+        createUser(this.state).then(data => {
+            if(data.statusCode === 200) {
+                this.props.login({ username, password });
             } else {
-                this.setState({ validated: false, errMessage: res.message })
+                console.error(data.message);
             }
         });
-    };
+    }
 
     handleChange = e => {
         this.setState({ [e.target.name]: e.target.value });
-    };
-
-    handleDismissError = e => {
-        this.setState({ errMessage: '' })
-    };
+    }
 
     render() {
-        const errMessage = this.state.errMessage;
-        const validated = this.state.validated;
         const { loading } = this.props;
 
         return (
             <div className="RegistrationForm">
-                <Form validated={validated} onSubmit={this.handleRegistration}>
+                <Form onSubmit={this.handleRegistration}>
                     <Form.Group controlId="username">
                         <Form.Label>Username</Form.Label>
                         <Form.Control
@@ -58,20 +49,7 @@ class RegistrationForm extends React.Component {
                             type="text"
                             name="username"
                             onChange={this.handleChange}
-                            placeholder="Please enter username..."
-                        />
-                    </Form.Group>
-
-                    <Form.Group controlId="password">
-                        <Form.Label>Password</Form.Label>
-                        <Form.Control
-                            required
-                            type="password"
-                            name="password"
-                            minlength={3}
-                            maxlength={20}
-                            onChange={this.handleChange}
-                            placeholder="Please enter password..."
+                            placeholder="please enter username..."
                         />
                     </Form.Group>
 
@@ -84,7 +62,20 @@ class RegistrationForm extends React.Component {
                             minlength={3}
                             maxlength={20}
                             onChange={this.handleChange}
-                            placeholder="Jane/John Doe"
+                            placeholder="please enter display name..."
+                        />
+                    </Form.Group>
+
+                    <Form.Group controlId="password">
+                        <Form.Label>Password</Form.Label>
+                        <Form.Control
+                            required
+                            type="password"
+                            name="password"
+                            minlength={3}
+                            maxlength={20}
+                            onChange={this.handleChange}
+                            placeholder="please enter password..."
                         />
                     </Form.Group>
 
@@ -97,11 +88,9 @@ class RegistrationForm extends React.Component {
                         Register
                     </Button>
                 </Form>
-                {loading && <Spinner name="circle" color="blue" />}
-                {errMessage && <Alert dismissible onClose={this.handleDismissError} variant="danger">{errMessage}</Alert>}
             </div>
         );
     }
 }
 
-export default RegistrationForm;
+export default withAsyncAction("auth", "login")(RegistrationForm);

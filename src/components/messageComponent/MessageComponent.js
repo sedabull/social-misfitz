@@ -1,7 +1,8 @@
 import React from "react";
-import "./MessageComponent.css";
 import Card from "react-bootstrap/Card";
 import Badge from "react-bootstrap/Badge";
+
+import "./MessageComponent.css";
 import LikesComponent from "../likesComponent/LikesComponent";
 import { deleteMessage } from '../../services/dataService';
 
@@ -30,7 +31,7 @@ class MessageComponent extends React.Component {
                 <Card style={{ width: '20rem' }}>
                     <Card.Header>
                         <Card.Title>
-                            MessageNumber:{this.props.message.id}
+                            MessageNumber: {this.props.message.id}
                             {badge}
                         </Card.Title>
                         <Card.Subtitle>

@@ -1,6 +1,7 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
+
 import ghostUser from '../../assets/ghostuser.png';
 import UserUpdater from '../userUpdater/UserUpdater';
 import UserDeleter from '../userDeleter/UserDeleter';

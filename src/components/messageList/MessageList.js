@@ -5,7 +5,7 @@ function MessageList(props) {
     return (
         <div className="MessageList">
             {props.messages.map(message => (
-                <MessageComponent {...props} message={message} />
+                <MessageComponent {...props} key={message.id} message={message} />
             ))}
         </div>
     );

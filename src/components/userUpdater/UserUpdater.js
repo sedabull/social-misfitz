@@ -2,6 +2,7 @@ import React from 'react';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
+
 import { updateUser, setUserPicture } from '../../services/dataService';
 
 class UserUpdater extends React.Component {
@@ -49,13 +50,25 @@ class UserUpdater extends React.Component {
             updateUser(this.props.username, this.props.token, {
                 about: this.state.about,
                 displayName: this.state.displayName
-            }).then(data => this.props.update());
+            }).then(data => {
+                if(data.statusCode === 200) {
+                    this.props.update();
+                } else {
+                    console.error(data.message);
+                }
+            });
         } else {
             updateUser(this.props.username, this.props.token, {
                 about: this.state.about,
                 password: this.state.password,
                 displayName: this.state.displayName
-            }).then(data => this.props.update());
+            }).then(data => {
+                if(data.statusCode === 200) {
+                    this.props.update()
+                } else {
+                    console.error(data.message);
+                }
+            });
         }
 
         this.props.onClose();
@@ -105,7 +118,7 @@ class UserUpdater extends React.Component {
                                 type='password'
                                 minLength={3}
                                 maxLength={20}
-                                placeholder="optional"
+                                placeholder="optional..."
                                 onChange={this.handleChange}
                                 value={this.state.password}
                             />
