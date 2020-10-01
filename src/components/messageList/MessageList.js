@@ -1,4 +1,6 @@
 import React from "react";
+
+import "./MessageList.css";
 import MessageComponent from '../messageComponent/MessageComponent';
 
 function MessageList(props) {

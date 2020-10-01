@@ -44,9 +44,12 @@ export function getUserPicture(username) {
 }//end getUserPicture
 
 export function setUserPicture(username, token, image) {
+    let formData = new FormData();
+    formData.append("picture", image);
+
     return fetch(url + `users/${username}/picture`, {
         method: 'PUT',
-        body: image,
+        body: formData,
         headers: {
             'accept': 'application/json',
             'Content-Type': 'multipart/form-data',

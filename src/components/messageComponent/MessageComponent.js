@@ -1,10 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Card from "react-bootstrap/Card";
 import Badge from "react-bootstrap/Badge";
 
 import "./MessageComponent.css";
-import LikesComponent from "../likesComponent/LikesComponent";
 import { deleteMessage } from '../../services/dataService';
+import LikesComponent from "../likesComponent/LikesComponent";
 
 class MessageComponent extends React.Component {
 
@@ -35,7 +36,10 @@ class MessageComponent extends React.Component {
                             {badge}
                         </Card.Title>
                         <Card.Subtitle>
-                            @{this.props.message.username} posted on {createDate}:
+                            <Link to={`/profile/${this.props.message.username}`}>
+                            @{this.props.message.username + ' '}
+                            </Link>
+                            posted on {createDate}:
                         </Card.Subtitle>
                     </Card.Header>
                     <Card.Body>
