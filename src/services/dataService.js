@@ -52,7 +52,6 @@ export function setUserPicture(username, token, image) {
         body: formData,
         headers: {
             'accept': 'application/json',
-            'Content-Type': 'multipart/form-data',
             'Authorization': `Bearer ${token}`
         }//end headers
     }).then(res => res.json());
