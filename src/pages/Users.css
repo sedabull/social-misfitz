@@ -1,0 +1,16 @@
+.Users h2 {
+    text-align: center;
+}
+
+.Users .form-group {
+    width: 500px;
+    margin: 10px auto;
+}
+
+.flexible {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0px 300px;
+    margin-top: 10px;
+}

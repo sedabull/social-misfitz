@@ -1,21 +1,24 @@
-import './Profile.css';
 import React from "react";
+import Pagination from "react-bootstrap/Pagination";
+
+import './Profile.css';
 import { store } from '../redux';
 import Menu from "../components/menu/Menu";
-import { getUser, getMessages } from '../services/dataService';
 import { userIsAuthenticated } from "../redux/HOCs";
+import { getUser, getMessages } from '../services/dataService';
 import UserProfile from "../components/userProfile/UserProfile";
 import MessageList from "../components/messageList/MessageList";
-import MessagePoster from "../components/messagePoster/MessagePoster";
 
 class Profile extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
+            count: 0,
+            active: 1,
+            messages: [],
             token: store.getState().auth.login.result.token,
             username: store.getState().auth.login.result.username,
-            messages: [],
             user: {
                 pictureLocation: '',
                 username: '',
@@ -29,19 +32,23 @@ class Profile extends React.Component {
     }
 
     componentDidMount() {
-        this.updateUser();
+        this.update();
     }
 
-    updateUser = () => {
-        getUser(this.props.match.params.username).then(userData => {
-            if(userData.statusCode === 200) {
-                let username = this.props.match.params.username || '';
-                getMessages(username).then(messagesData => {
-                    this.setState({ user: userData.user, messages: messagesData.messages })
-                })
+    update = () => {
+        let username = this.props.match.params.username;
+        
+        this.updateUser(username);
+        this.updateMessages(username);
+    }
+
+    updateUser = (username) => {
+        getUser(username).then(data => {
+            if(data.statusCode === 200) {
+                this.setState({ user: data.user })
             } else {
+                console.error(data.message);
                 this.setState({
-                    messages: [],
                     user: {
                         pictureLocation: '',
                         username: '',
@@ -56,17 +63,86 @@ class Profile extends React.Component {
         });
     }
 
+    updateMessages = (username) => {
+        getMessages(username, 12, 12 * (this.state.active - 1)).then(data => {
+            if(data.statusCode === 200) {
+                this.setState({ messages: data.messages, count: data.count });
+            } else {
+                console.error(data.message);
+            }
+        });
+    }
+
+    next = () => {
+        if(12 * this.state.active < this.state.count) {
+            this.setState(state => ({ active: state.active + 1 }), this.update);
+        }
+    }
+
+    prev = () => {
+        if(this.state.active > 1) {
+            this.setState(state => ({ active: state.active - 1 }), this.update);
+        }
+    }
+
+    first = () => {
+        this.setState({ active: 1 }, this.update);
+    }
+
+    last = () => {
+        this.setState(state => ({ active: Math.ceil(state.count / 12) }), this.update);
+    }
+
     render() {
         return (
             <div className="Profile">
                 <Menu isAuthenticated={this.props.isAuthenticated} />
-                <div className="flex-row">
+                <main>
+                    <UserProfile {...this.state} match={this.props.match} update={this.update} />
                     <div>
-                        <UserProfile {...this.state} match={this.props.match} update={this.updateUser} />
-                        {this.state.username === this.props.match.params.username && <MessagePoster {...this.state} update={this.updateUser} />}
+                        {this.state.messages.length && <div className="Centered">
+                            <Pagination size="lg">
+                                <Pagination.First
+                                    onClick={this.first}
+                                    disabled={this.state.active === 1}
+                                />
+                                <Pagination.Prev
+                                    onClick={this.prev}
+                                    disabled={this.state.active === 1}
+                                />
+                                <Pagination.Item active>{this.state.active}</Pagination.Item>
+                                <Pagination.Next
+                                    onClick={this.next}
+                                    disabled={12 * this.state.active > this.state.count}
+                                />
+                                <Pagination.Last
+                                    onClick={this.last}
+                                    disabled={this.state.active === Math.ceil(this.state.count / 12)}
+                                />
+                            </Pagination>
+                        </div>}
+                        <div className="message-body">
+                            {this.state.messages.length > 0 && <MessageList
+                                update={this.update}
+                                token={this.state.token}
+                                username={this.state.username}
+                                messages={this.state.messages.slice(0, 4)}
+                            />}
+                            {this.state.messages.length > 4 && <MessageList
+                                update={this.update}
+                                token={this.state.token}
+                                username={this.state.username}
+                                messages={this.state.messages.slice(4, 8)}
+                            />}
+                            {this.state.messages.length > 8 && <MessageList
+                                update={this.update}
+                                token={this.state.token}
+                                username={this.state.username}
+                                messages={this.state.messages.slice(8, 12)}
+                            />}
+                        </div>
                     </div>
-                    <MessageList {...this.state} update={this.updateUser} />
-                </div>
+                </main>
             </div>
         );
     }

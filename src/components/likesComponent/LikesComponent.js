@@ -1,38 +1,9 @@
 import React from "react";
-import { getMessage, addLike, deleteLike } from "../../services/dataService";
 import Button from 'react-bootstrap/Button';
 
+import { addLike, deleteLike } from "../../services/dataService";
+
 class LikesComponent extends React.Component {
-    // constructor(props) {
-    //     super(props);
-
-    //     this.state = {
-    //         like: {
-    //             id: 0,
-    //             username: '',
-    //             messageId: 0,
-    //             createdAt: ''
-    //         }
-    //     };
-    // }
-
-    // updateLikes() {
-    //     getMessage(this.props.messageId).then(data => {
-    //         if(data.message.likes.some(like => like.username === this.props.username)) {
-    //             let like = data.message.likes.find(like => like.username === this.props.username);
-    //             this.setState({ like });
-    //             this.props.update();
-    //         }
-    //     });
-    // }
-
-    // componentDidMount() {
-    //     this.updateLikes();
-    // }
-
-    // componentDidUpdate() {
-    //     this.updateLikes();
-    // }
 
     likePost = e => {
         addLike(this.props.message.id, this.props.token).then(data => {
