@@ -5,8 +5,6 @@ import Navbar from "react-bootstrap/Navbar";
 
 import "./Menu.css";
 import { withAsyncAction } from "../../redux/HOCs";
-import Navbar from "react-bootstrap/Navbar";
-import Nav from "react-bootstrap/Nav";
 import madDog from "../../images/angry-chihuahua.jpg";
 
 class Menu extends React.Component {
