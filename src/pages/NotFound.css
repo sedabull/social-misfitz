@@ -7,17 +7,18 @@
 }
 
 .NotFound {
-    /* background-image: no-repeat;
-    background-size: cover;
-    background-size: auto 400%;
-    background-size: height 400%; */
-     background-repeat: no-repeat;
+    background-color: gainsboro;
+    background-color:cover;
+    background-repeat: no-repeat;
      background-position: center;
-     width: 1500px;
+     width: 2000px;
      height: 1000px;
      border: none;
-
+    
+}
+/* .image {
+    
+image-rendering: url("../images/Squirrel-404.jpg");
 
     
-    background-image:url("../images/Squirrel-404.jpg");
-}
+} */
