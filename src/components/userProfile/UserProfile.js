@@ -9,7 +9,7 @@ import UserDeleter from '../userDeleter/UserDeleter';
 import MessagePoster from "../messagePoster/MessagePoster";
 
 class UserProfile extends React.Component {
-    constructor(props) {
+     constructor(props) {
         super(props);
 
         this.state = {
@@ -94,6 +94,29 @@ class UserProfile extends React.Component {
             </div>
         );
     }
+
+    return (
+      <div className="UserPicture">
+        <Card style={{ width: "25rem" }} border = "white">
+          <Card.Img
+            class="rounded-circle"
+            variant="top"
+            src={url ? url + this.props.user.pictureLocation : ghostUser}
+          />
+          <Card.Body>
+            <Card.Title>{this.props.user.displayName}</Card.Title>
+            <Card.Text>{this.props.user.about}</Card.Text>
+          </Card.Body>
+          {button}
+          <UserUpdater
+            {...this.props}
+            onClose={this.hideModal}
+            show={this.state.showModal}
+          />
+        </Card>
+      </div>
+    );
+  }
 }
 
 export default UserProfile;
