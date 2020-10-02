@@ -60,7 +60,7 @@ class LoginForm extends React.Component {
                 <Button 
                     block 
                     type="submit"
-                    variant="primary"
+                    variant="success"
                     disabled={loading}
                 >
                     Login

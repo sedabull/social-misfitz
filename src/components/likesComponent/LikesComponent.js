@@ -36,9 +36,9 @@ class LikesComponent extends React.Component {
         }
         
         if(userDidLike) {
-            button = <Button size="sm" variant="secondary" onClick={this.unlikePost}>Unlike!</Button>
+            button = <Button size="sm" variant="warning" onClick={this.unlikePost}>Unlike!</Button>
         } else {
-            button = <Button size="sm" variant="primary" onClick={this.likePost}>Like!</Button>
+            button = <Button size="sm" variant="success" onClick={this.likePost}>Like!</Button>
         }
 
         return (

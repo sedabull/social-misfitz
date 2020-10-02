@@ -2,5 +2,11 @@
   width: 250px;
   padding: 5px;
   border-radius: 3px;
-  border: 3px solid var(--primary);
+  color: var(--light);
+  background-color: var(--yellow);
+  border: 3px solid var(--light);
+}
+
+.LoginForm label {
+    color: var(--light);
 }

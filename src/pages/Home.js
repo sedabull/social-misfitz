@@ -30,12 +30,14 @@ class Home extends React.Component {
         return (
             <div className="Home">
                 <Menu />
-                <h2>Your favorite social hub for misfits.</h2>
+                <h1>Your favorite social hub for misfits.</h1>
                 <div className="Centered">
-                    {form}
-                    <Button onClick={this.toggle}>
-                        {this.state.userHasAccount ? "Need to Register?" : "Already a member?"}
-                    </Button>
+                    <div>
+                        {form}
+                        <Button variant="dark" block onClick={this.toggle}>
+                            {this.state.userHasAccount ? "Need to Register?" : "Already a member?"}
+                        </Button>
+                    </div>
                 </div>
 
             </div>
