@@ -2,6 +2,7 @@ import React from 'react';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 
+import './UserProfile.css';
 import ghostUser from '../../assets/ghostuser.png';
 import UserUpdater from '../userUpdater/UserUpdater';
 import UserDeleter from '../userDeleter/UserDeleter';
@@ -36,6 +37,7 @@ class UserProfile extends React.Component {
 
         return (
             <div className="UserProfile">
+                <h1>User Profile:</h1>
                 <Card style={{ width: '25rem' }}>
                     <Card.Img variant='top' src={url ? url + this.props.user.pictureLocation : ghostUser} />
                     
