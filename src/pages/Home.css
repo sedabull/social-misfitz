@@ -1,3 +1,8 @@
+.Home {
+    height: 100vh;
+    background-color: var(--orange);
+}
+
 .Centered {
     display: flex;
     flex-direction: column;
@@ -5,11 +10,16 @@
     align-items: center;
 }
 
-.Home h2{
+.Home h1{
+    color: var(--light);
     text-align: center;
+}
+
+.Home .btn {
+    margin-top: 10px;
 }
 
 body {
     background-color: lightblue;
     background: rgba(0, 128, 0, 0.3)
-    }
+}

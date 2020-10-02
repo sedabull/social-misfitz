@@ -38,7 +38,7 @@ class UserProfile extends React.Component {
         return (
             <div className="UserProfile">
                 <h1>User Profile:</h1>
-                <Card style={{ width: '25rem' }}>
+                <Card style={{ width: '25rem', border: 'deepskyblue' }}>
                     <Card.Img
                         variant='top'
                         src={url ? url + this.props.user.pictureLocation : ghostUser} 

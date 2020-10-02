@@ -13,3 +13,15 @@
 .MessageComponent .badge:hover {
     cursor: pointer;
 }
+
+.MessageComponent .card-header, .MessageComponent .card-footer {
+    background-color: yellow;
+}
+
+.MessageComponent .card-body {
+    background-color: lightyellow;
+}
+
+.MessageComponent a {
+    color: var(--gray);
+}
