@@ -1,0 +1,15 @@
+.Centered {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.Home h2{
+    text-align: center;
+}
+
+body {
+    background-color: lightblue;
+    background: rgba(0, 128, 0, 0.3)
+    }

@@ -1,5 +1,12 @@
-.flex-row {
+.Profile main {
     display: flex;
     margin-top: 20px;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    padding: 0px 250px;
+}
+
+.message-body {
+    width: 975px;
+    display: flex;
+    justify-content: space-between;
 }

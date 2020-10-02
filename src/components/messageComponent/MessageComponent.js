@@ -1,9 +1,11 @@
 import React from "react";
-import "./MessageComponent.css";
+import { Link } from "react-router-dom";
 import Card from "react-bootstrap/Card";
 import Badge from "react-bootstrap/Badge";
-import LikesComponent from "../likesComponent/LikesComponent";
+
+import "./MessageComponent.css";
 import { deleteMessage } from '../../services/dataService';
+import LikesComponent from "../likesComponent/LikesComponent";
 
 class MessageComponent extends React.Component {
 
@@ -11,6 +13,8 @@ class MessageComponent extends React.Component {
         deleteMessage(this.props.message.id, this.props.token).then(data => {
             if(data.statusCode === 200) {
                 this.props.update();
+            } else {
+                console.error(data.message);
             }
         });
     }
@@ -28,11 +32,14 @@ class MessageComponent extends React.Component {
                 <Card style={{ width: '20rem' }}>
                     <Card.Header>
                         <Card.Title>
-                            MessageNumber:{this.props.message.id}
+                            MessageNumber: {this.props.message.id}
                             {badge}
                         </Card.Title>
                         <Card.Subtitle>
-                            {this.props.message.username} posted at {createDate}:
+                            <Link to={`/profile/${this.props.message.username}`}>
+                            @{this.props.message.username + ' '}
+                            </Link>
+                            posted on {createDate}:
                         </Card.Subtitle>
                     </Card.Header>
                     <Card.Body>
