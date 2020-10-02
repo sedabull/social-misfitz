@@ -1,3 +1,4 @@
-.MessageList h1 {
-    text-align: center;
+.MessageList {
+    display: flex;
+    flex-direction: column;
 }
