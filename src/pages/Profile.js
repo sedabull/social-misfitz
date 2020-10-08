@@ -100,7 +100,7 @@ class Profile extends React.Component {
                 <main>
                     <UserProfile {...this.state} match={this.props.match} update={this.update} />
                     <div>
-                        {this.state.messages.length && <div className="Centered">
+                        {this.state.messages.length > 0 && <div className="Centered">
                             <Pagination size="lg">
                                 <Pagination.First
                                     onClick={this.first}
